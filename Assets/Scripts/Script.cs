@@ -10,11 +10,10 @@ public class Script : MonoBehaviour
     private string result;
     public Text scoreText;
     private string[] uom = { "", "k", "m", "M", "T", "q", "Q" };
-    public ulong ShopBonusClick;
 
     public void isClicked()
     {
-        GetScoreClick(); 
+        score++;
         int stepen = 0;
         for (ulong i = score; i > 0; i /= 1000)
         {
@@ -34,13 +33,10 @@ public class Script : MonoBehaviour
     {
         scoreText.text = "0";
     }
+
     // Update is called once per frame
     void Update()
     {
         
-    }
-    public void GetScoreClick()
-    {
-        score = score + 1 + ShopBonusClick;
     }
 }
