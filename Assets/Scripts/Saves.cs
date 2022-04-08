@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Saves : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public ulong scoreToSave;
+
+    public void printScore()
+    {
+        scoreToSave = gameObject.GetComponent<Script>().score;
+        Debug.Log(scoreToSave.ToString());
+    }
+    void OnApplicationQuit()
+    {
+        scoreToSave = gameObject.GetComponent<Script>().score;
+        Debug.Log(scoreToSave.ToString());
+        PlayerPrefs.SetString("SavedString", scoreToSave.ToString());
+        PlayerPrefs.Save();
+        Debug.Log("Game data saved!");
+    }
     void Start()
     {
-        Script script1 = new Script();
-        script1.score = (ulong)PlayerPrefs.GetInt("Score");
-        Debug.Log("Data loaded");
-    }
-
-    // Update is called once per frame
-   public void saveData()
-    {
-        Script script1 = new Script();
-        PlayerPrefs.SetString("Score", script1.score.ToString());
+        gameObject.GetComponent<Script>().score = ulong.Parse(PlayerPrefs.GetString("SavedString"));
     }
 }

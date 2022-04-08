@@ -7,7 +7,6 @@ using System;
 public class Script : MonoBehaviour
 {
     public ulong score = 0;
-    private string result;
     public Text scoreText;
     private string[] uom = { "", "k", "m", "M", "T", "q", "Q" };
 
@@ -25,18 +24,11 @@ public class Script : MonoBehaviour
         {
             res = res / Math.Pow(1000, stepen);
         }
-        result = Math.Round(res, 3).ToString();
-        scoreText.text = result + uom[stepen];
+        scoreText.text = Math.Round(res, 3).ToString() + uom[stepen];
     }
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text = "0";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
