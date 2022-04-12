@@ -538,7 +538,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -694,6 +694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 803178865}
   - component: {fileID: 803178866}
+  - component: {fileID: 803178867}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -718,7 +719,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 1226.55}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &803178866
 MonoBehaviour:
@@ -734,6 +735,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 4186403917725855373, guid: b9d0625cddee7914989027062a488777, type: 3}
   cost: {fileID: 1455198129274212375, guid: c0ffe25126718e148a84fce9e509c89d, type: 3}
+  countObject: 10
+--- !u!114 &803178867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803178864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &990077905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,7 +1167,7 @@ RectTransform:
   m_Children:
   - {fileID: 2137016201}
   m_Father: {fileID: 1525697753}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1346,8 +1361,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 496546821}
-  - {fileID: 1504401356}
   - {fileID: 1776816721}
+  - {fileID: 1504401356}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1614,7 +1629,7 @@ RectTransform:
   - {fileID: 167672883}
   - {fileID: 1429636557}
   m_Father: {fileID: 1525697753}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1636,7 +1651,7 @@ MonoBehaviour:
   m_Content: {fileID: 803178865}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 0
   m_Elasticity: 0.1
   m_Inertia: 0
   m_DecelerationRate: 0.135
