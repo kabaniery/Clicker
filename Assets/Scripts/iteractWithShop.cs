@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class iteractWithShop : MonoBehaviour
 {
@@ -10,8 +11,11 @@ public class iteractWithShop : MonoBehaviour
     public int countObject = 4;
     private GameObject[,] shopProducts;
     private Vector2[] productsCoords;
+    private int countClicks;
+    private bool isActive = true;
     private void Start()
     {
+
         shopProducts = new GameObject[countObject, 2];
         productsCoords = new Vector2[countObject];
         for (int i = 0; i < countObject; i++)
@@ -30,5 +34,39 @@ public class iteractWithShop : MonoBehaviour
                 //Тута же будем вписывать цену элементов и т.д. Но так как я в душе не ебу, что за названия, действия и цены у товаров, оставлю их просто разноцветными прямоугольниками
             }
         }
+    }
+    void Update()
+    {
+        if (isActive)
+        {
+            Debug.Log(Input.touchCount);
+            if (countClicks != Input.touchCount)
+            {
+                countClicks = Input.touchCount;
+                for (int i = 0; i < countObject; i++)
+                {
+                    if (Math.Abs(productsCoords[i].x - Input.mousePosition.x) <= 340 && Math.Abs(productsCoords[i].y - Input.mousePosition.y) <= 150)
+                    {
+                        mouseClicked(i);
+                    }
+                }
+            }
+        }
+    }
+    public void shopClosed()
+    {
+        isActive = false;
+    }
+    public void shopOpen()
+    {
+        isActive = true;
+    }
+    void OnMouseUp()
+    {
+        Debug.Log("Mouse Clicked");
+    }
+    void mouseClicked(int id)
+    {
+        Debug.Log(id);
     }
 }
