@@ -39,10 +39,9 @@ public class iteractWithShop : MonoBehaviour
     {
         if (isActive)
         {
-            Debug.Log(Input.touchCount);
-            if (countClicks != Input.touchCount)
+            if (Input.GetMouseButtonDown(0)) //Поменять, сука, на мобильную альтернативу!!!!!!!!!!!!!!!!!!!!!!!!!!! ИНАЧЕ БАН
             {
-                countClicks = Input.touchCount;
+                Debug.Log(Input.mousePosition.x.ToString() + " " + Input.mousePosition.y.ToString());
                 for (int i = 0; i < countObject; i++)
                 {
                     if (Math.Abs(productsCoords[i].x - Input.mousePosition.x) <= 340 && Math.Abs(productsCoords[i].y - Input.mousePosition.y) <= 150)
@@ -60,10 +59,6 @@ public class iteractWithShop : MonoBehaviour
     public void shopOpen()
     {
         isActive = true;
-    }
-    void OnMouseUp()
-    {
-        Debug.Log("Mouse Clicked");
     }
     void mouseClicked(int id)
     {
